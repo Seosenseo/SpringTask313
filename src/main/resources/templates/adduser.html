@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .button {
+            padding: 10px 30px;
+            background-color: #FF7F50;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .button:hover {
+            background-color: #FFA500; /* Изменение цвета при наведении */
+        }
+    </style>
+</head>
+<body>
+<h2>Add User</h2>
+<form action="#" th:action="@{/admin/adduser}" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" required>
+    <br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required>
+    <br>
+
+    <button type="submit" class="button">Save</button>
+    <a href="/admin" class="button">Cancel</a>
+</form>
+</body>
+</html>
+

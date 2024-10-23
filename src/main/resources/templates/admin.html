@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Admin panel</title>
+    <style>
+        .button {
+            padding: 10px 30px;
+            background-color: #FF7F50;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+
+        .button:hover {
+            background-color: #FFA500; /* Изменение цвета при наведении */
+        }
+
+        .table {
+            width: 300px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+            border: 3px solid #ffc2b6; /* Прячем рамку вокруг таблицы */
+            margin: 20px 0; /* Отступы сверху и снизу */
+        }
+
+        .table th, .table td {
+            border: 1px solid #ffc2b6; /* Рамка для ячеек */
+            padding: 8px; /* Отступы внутри ячеек */
+            text-align: left; /* Выравнивание текста */
+        }
+
+        /*.table th {*/
+        /*    background-color: #f2f2f2; !* Цвет фона заголовков *!*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<h2>Admin panel</h2>
+
+<a href="/admin/adduser" class="button">add user</a>
+
+<h1></h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Address</th>
+        <th>Pass</th>
+        <th>Roles</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${listusers}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.address}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.roles}">
+
+        </td>
+        <td>
+            <a th:href="@{/admin/edit/{id}(id=${user.id})}">Edit</a>
+            <a th:href="@{admin/delete/{id}(id=${user.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h5><a href="/admin/clear-table" class="button">clean table</a></h5>
+
+</body>
+</html>

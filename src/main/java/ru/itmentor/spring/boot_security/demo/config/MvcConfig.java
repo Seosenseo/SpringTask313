@@ -1,4 +1,4 @@
-package ru.itmentor.spring.boot_security.demo.configs;
+package ru.itmentor.spring.boot_security.demo.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

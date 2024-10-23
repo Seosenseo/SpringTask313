@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear table</title>
+  <style>
+    .button {
+      padding: 10px 30px;
+      background-color: #FF7F50;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      text-decoration: none; /* Убираем подчеркивание */
+    }
+    .button:hover {
+      background-color: #FFA500; /* Изменение цвета при наведении */
+    }
+    .button-red {
+      padding: 10px 30px;
+      background-color: #ff7c4b;
+      color: white;
+      border: none;
+      border-radius: 15px;
+    text-decoration: none; /* Убираем подчеркивание */
+    }
+    .button-red:hover {
+      background-color: #ff0000; /* Изменение цвета при наведении */
+    }
+  </style>
+</head>
+<body>
+<h2>Clear table</h2>
+<p>Are you sure you want to clear this table?</p>
+<form action="#" th:action="@{/admin/clear-table}" method="post">
+  <button type="submit" class="button-red">CLEAR</button>
+  <a href="/admin" class="button">Cancel</a>
+</form>
+</body>
+</html>
